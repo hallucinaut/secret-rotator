@@ -217,7 +217,7 @@ func (sr *SecretRotator) LoadConfig(configPath string) error {
 
 // DiscoverSecrets scans for secrets in the specified paths
 func (sr *SecretRotator) DiscoverSecrets(paths []string) error {
-	noticeColor.Println("\n🔍 Discovering secrets...\n")
+	noticeColor.Println("🔍 Discovering secrets...")
 	
 	for _, path := range paths {
 		infoColor.Printf("Scanning: %s\n", path)
@@ -352,7 +352,7 @@ func (sr *SecretRotator) detectManager(secretType SecretType) SecretType {
 
 // RotateSecrets rotates all secrets that need rotation
 func (sr *SecretRotator) RotateSecrets() error {
-	successColor.Println("\n🔄 Starting secret rotation...\n")
+	successColor.Println("🔄 Starting secret rotation...")
 	
 	for i, secret := range sr.config.Secrets {
 		noticeColor.Printf("Rotating secret %d/%d: %s\n", i+1, len(sr.config.Secrets), secret.Name)
@@ -513,7 +513,7 @@ func (sr *SecretRotator) auditRotation(secretID string) error {
 
 // PrintReport prints the rotation report
 func (sr *SecretRotator) PrintReport() {
-	infoColor.Println("\n" + strings.Repeat("=", 80))
+	infoColor.Println("" + strings.Repeat("=", 80))
 	infoColor.Println("📊 SECRET ROTATION REPORT")
 	infoColor.Println(strings.Repeat("=", 80))
 	
@@ -545,7 +545,7 @@ func (sr *SecretRotator) PrintReport() {
 	
 	// Detailed results
 	if len(sr.results) > 0 {
-		infoColor.Println("\n🔍 DETAILED RESULTS:\n")
+		infoColor.Println("🔍 DETAILED RESULTS:")
 		
 		sort.Slice(sr.results, func(i, j int) bool {
 			return sr.results[i].SecretName < sr.results[j].SecretName
@@ -592,9 +592,9 @@ func (sr *SecretRotator) PrintReport() {
 	}
 	
 	if sr.dryRun {
-		warnColor.Println("\n⚠️  This was a DRY RUN. No secrets were actually rotated.\n")
+		warnColor.Println("⚠️  This was a DRY RUN. No secrets were actually rotated.")
 	} else {
-		successColor.Println("\n✅ Rotation complete!\n")
+		successColor.Println("✅ Rotation complete!")
 	}
 }
 
