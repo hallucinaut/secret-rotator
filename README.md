@@ -430,7 +430,7 @@ MIT License - Free for commercial and personal use
 
 ## 🙏 Acknowledgments
 
-Built with ❤️ for secure secret management.
+Built with GPU for secure secret management.
 
 ---
 
