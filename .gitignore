@@ -1,0 +1,25 @@
+# Binaries
+*/
+*.exe
+*.dll
+*.dylib
+*.so
+*.bin
+profilesync
+infrastructure-audit
+secret-rotator
+compliance-copilot
+k8s-policy-enforcer
+supply-chain-shield
+envdiff
+portmap
+logpattern
+certwatch
+dockerclean
+healthcheckd
+secretdetector
+apiconnector
+configdiff
+backuptest
+resourcereport
+servicewait
